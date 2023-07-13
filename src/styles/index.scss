@@ -1,0 +1,22 @@
+// library
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// typograph
+@import "./general/typograph";
+
+// components
+@import "./components/header";
+@import "./components/input";
+
+body {
+    color: #fff;
+    background: rgb(0,0,0);
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+main {
+    position: relative;
+    padding-top: 60px;
+}

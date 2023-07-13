@@ -1,0 +1,3 @@
+interface InputFieldProps {
+    placeholder?: string;
+}
