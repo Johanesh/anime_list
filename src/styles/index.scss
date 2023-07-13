@@ -5,8 +5,12 @@
 @import "./general/typograph";
 
 // components
+@import "./components/card";
 @import "./components/header";
 @import "./components/input";
+
+// pages
+@import "./pages/anime";
 
 body {
     color: #fff;
@@ -18,5 +22,5 @@ body {
 
 main {
     position: relative;
-    padding-top: 60px;
+    padding-top: 80px;
 }

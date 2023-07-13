@@ -1,0 +1,43 @@
+.card {
+    padding: 8px;
+    background-color: #eee;
+    color: #000;
+    font-size: 14px;
+    &__image {
+        max-width: 100%;
+        height: auto;
+    }
+    &__title {
+        margin-bottom: 4px;
+        h4 {
+            display: inline;
+            font-weight: 700;
+            vertical-align: middle;
+        }
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+    }
+    &__rating {
+        display: inline;
+        font-size: 14px;
+        padding: 4px;
+        color: #fff;
+        background-color: #888;
+        vertical-align: middle;
+        margin-right: 4px;
+    }
+    &__info {
+        div {
+            margin-bottom: 4px;
+            & > span:first-child {
+                margin-right: 8px;
+                &::after {
+                    content: "|";
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+}
