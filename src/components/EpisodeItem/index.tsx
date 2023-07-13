@@ -1,3 +1,5 @@
+import Rating from "../Rating";
+
 const EpisodeItem = () => {
     return (
         <div className="episode">
@@ -7,9 +9,7 @@ const EpisodeItem = () => {
                     <div>05 September 2022</div>
                 </div>
                 <div className="col-4 text-end">
-                    <div className="card__rating">
-                        6.7
-                    </div>
+                    <Rating rate={6.7} />
                 </div>
             </div>
             <hr />

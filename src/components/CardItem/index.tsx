@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Rating from "../Rating";
 
 const CardItem = () => {
     return (
@@ -9,9 +10,7 @@ const CardItem = () => {
                 </div>
                 <div className="col-lg-8">
                     <div className="card__title text-ellipsis-two-row">
-                        <div className="card__rating">
-                            6.7
-                        </div>
+                        <Rating rate={6.7} />
                         <Link href={"#"} target="_blank">
                             <h4>Nanatsu no Taizai: Funnu no Shinpan</h4>
                         </Link>

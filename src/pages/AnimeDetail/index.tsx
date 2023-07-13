@@ -1,4 +1,5 @@
 import EpisodeItem from "@/components/EpisodeItem";
+import Rating from "@/components/Rating";
 import { faAward, faChartSimple, faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -15,9 +16,7 @@ const AnimeDetail = () => {
                     <div className="col-lg-8">
                         <div>TV</div>
                         <div className="anime-detail__title">
-                            <div className="card__rating">
-                                6.7
-                            </div>
+                            <Rating rate={8.1} />
                             <h4 className="d-inline">Nanatsu no Taizai: Funnu no Shinpan</h4>
                             <p>After the Kingdom of Liones faces a new threat, the Seven Deadly Sins split up in order to defeat an enemy force spanning Britannia. With their members divided, they face 3 powerful foes, attempt to rescue the lost part of a dear friend, and begin their rescue of Elizabeth.\n\nHowever, all is not quite as it seems. Along the way, the truth of what brought the end of the Holy War 3000 years ago is uncovered, causing old friends to come face to face against each other.\n\nNanatsu no Taizai: Funnu no Shinpan continues the adventure of the Seven Deadly Sins and their friends, and sees a great power released.</p>
                         </div>

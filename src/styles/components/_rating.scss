@@ -1,0 +1,12 @@
+.rating {
+    display: inline;
+    font-size: 14px;
+    padding: 4px;
+    color: #fff;
+    background-color: #888;
+    vertical-align: middle;
+    margin-right: 4px;
+    &--green {
+        background-color: green;
+    }
+}
