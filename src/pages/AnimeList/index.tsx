@@ -1,5 +1,6 @@
 'use client'
 import CardItem from "@/components/CardItem";
+import Modal from "@/components/Modal";
 import Pagination from "rc-pagination";
 import { useState } from "react";
 
@@ -54,6 +55,7 @@ export default function AnimeList() {
                     </div>
                 ) : <>&nbsp;</>
             }
+            <Modal isOpen />
         </div>
     )
 }
