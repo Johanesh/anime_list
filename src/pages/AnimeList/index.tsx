@@ -10,9 +10,10 @@ import InputField from "@/components/Input";
 import { LoadingContext } from "@/context/Loading";
 import { AlertContext } from "@/context/Alert";
 
-export default function AnimeList() {
+const AnimeList = () => {
     const {setIsLoading} = useContext(LoadingContext);
     const {setAlert} = useContext(AlertContext);
+    const [modalId, setModalId] = useState(0);
     const [isOpenModal, setIsOpenModal] = useState(false);
     const [search, setSearch] = useState("");
     const [filterData, setFilterData] = useState({
@@ -68,6 +69,7 @@ export default function AnimeList() {
     }
 
     const onToggleModal = (id?: number) => {
+        if (id) setModalId(id);
         setIsOpenModal(!isOpenModal)
     };
 
@@ -101,8 +103,13 @@ export default function AnimeList() {
                 ) : <>&nbsp;</>
             }
             <Modal isOpen={isOpenModal} onCloseModal={onToggleModal} hasContainer>
-                <AnimeDetail/>
+                <AnimeDetail
+                    modalId={modalId}
+                    dataDetail={dataList.filter((item: AnimeData) => item.mal_id === modalId)[0]}
+                />
             </Modal>
         </div>
     )
 }
+
+export default AnimeList;

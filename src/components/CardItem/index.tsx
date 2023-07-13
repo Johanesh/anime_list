@@ -10,7 +10,7 @@ const CardItem = (props: CardItemProps) => {
     return (
         <div className="card">
             <div className="row">
-                <div className="col-lg-4">
+                <div className="col-lg-4 text-center">
                     <img className="card__image" src={data.images.jpg.image_url} alt={data.title} />
                 </div>
                 <div className="col-lg-8">

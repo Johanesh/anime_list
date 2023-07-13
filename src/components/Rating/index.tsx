@@ -1,10 +1,11 @@
 const Rating = (props: RatingProps) => {
     const {
         rate,
+        minRate
     } = props;
 
     return (
-        <div className={`rating ${rate >= 8 ? "rating--green" : ""}`}>
+        <div className={`rating ${rate >= (minRate ? minRate : 8) ? "rating--green" : ""}`}>
             {rate}
         </div>
     )

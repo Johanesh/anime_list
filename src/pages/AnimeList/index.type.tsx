@@ -4,6 +4,13 @@ interface AnimeListFilterProps {
     limit: number;
 }
 
+interface RelationData {
+    mal_id: number;
+    name: string;
+    type: string;
+    url: string;
+}
+
 interface AnimeData {
     mal_id: number;
     score: number | null;
@@ -15,12 +22,7 @@ interface AnimeData {
     }
     type: string;
     year: number | null;
-    genres: {
-        mal_id: number;
-        name: string;
-        type: string;
-        url: string;
-    }[];
+    genres: RelationData[];
     status: string;
     trailer: {
         youtube_id: string;
@@ -36,4 +38,8 @@ interface AnimeData {
     }
     episodes: number;
     duration: string;
+    synopsis: string;
+    studios: RelationData[];
+    rank: number;
+    popularity: number;
 }

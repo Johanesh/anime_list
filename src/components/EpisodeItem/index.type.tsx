@@ -1,0 +1,3 @@
+interface EpisodeItemProps {
+    data: AnimeEpisodes;
+}
