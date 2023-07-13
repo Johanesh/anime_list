@@ -9,14 +9,11 @@
     }
     &__title {
         margin-bottom: 4px;
+        cursor: pointer;
         h4 {
             display: inline;
             font-weight: 700;
             vertical-align: middle;
-        }
-        a {
-            color: #000;
-            text-decoration: none;
         }
     }
     &__info {

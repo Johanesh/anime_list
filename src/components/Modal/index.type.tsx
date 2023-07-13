@@ -1,4 +1,5 @@
 interface ModalProps {
-    children: React.ReactNode,
+    children: React.ReactNode;
     isOpen: boolean;
+    onCloseModal: () => void;
 }

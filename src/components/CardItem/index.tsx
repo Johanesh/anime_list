@@ -1,7 +1,11 @@
 import Link from "next/link";
 import Rating from "../Rating";
 
-const CardItem = () => {
+const CardItem = (props: CardItemProps) => {
+    const {
+        onOpenDetail
+    } = props;
+
     return (
         <div className="card">
             <div className="row">
@@ -9,11 +13,9 @@ const CardItem = () => {
                     <img className="card__image" src="https://cdn.myanimelist.net/images/anime/1011/111551.jpg" alt="anime" />
                 </div>
                 <div className="col-lg-8">
-                    <div className="card__title text-ellipsis-two-row">
+                    <div className="card__title text-ellipsis-two-row" onClick={() => onOpenDetail(24)}>
                         <Rating rate={6.7} />
-                        <Link href={"#"} target="_blank">
-                            <h4>Nanatsu no Taizai: Funnu no Shinpan</h4>
-                        </Link>
+                        <h4>Nanatsu no Taizai: Funnu no Shinpan</h4>
                     </div>
                     <div className="card__info">
                         <div>

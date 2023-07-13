@@ -6,41 +6,26 @@ import { useState } from "react";
 import AnimeDetail from "../AnimeDetail";
 
 export default function AnimeList() {
+    const [isOpenModal, setIsOpenModal] = useState(false);
     const [filterData, setFilterData] = useState({
         current: "0",
         pageSize: "9",
         totalData: 0,
     });
 
+    const onToggleModal = (id?: number) => {
+        console.log(id);
+        setIsOpenModal(!isOpenModal)
+    }
+
     return (
         <div className="anime container-xxl">
             <div className="row gy-4">
                 <div className="col-lg-4">
-                    <CardItem/>
+                    <CardItem onOpenDetail={onToggleModal} />
                 </div>
                 <div className="col-lg-4">
-                    <CardItem/>
-                </div>
-                <div className="col-lg-4">
-                    <CardItem/>
-                </div>
-                <div className="col-lg-4">
-                    <CardItem/>
-                </div>
-                <div className="col-lg-4">
-                    <CardItem/>
-                </div>
-                <div className="col-lg-4">
-                    <CardItem/>
-                </div>
-                <div className="col-lg-4">
-                    <CardItem/>
-                </div>
-                <div className="col-lg-4">
-                    <CardItem/>
-                </div>
-                <div className="col-lg-4">
-                    <CardItem/>
+                    <CardItem onOpenDetail={onToggleModal}/>
                 </div>
             </div>
             {
@@ -56,7 +41,7 @@ export default function AnimeList() {
                     </div>
                 ) : <>&nbsp;</>
             }
-            <Modal isOpen>
+            <Modal isOpen={isOpenModal} onCloseModal={onToggleModal}>
                 <AnimeDetail/>
             </Modal>
         </div>
