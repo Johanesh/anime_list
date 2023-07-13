@@ -12,7 +12,7 @@ export default function AnimeList() {
     const [filterData, setFilterData] = useState({
         q: "",
         page: 1,
-        limit: 9,
+        limit: 15,
     });
     const [totalData, setTotalData] = useState(0);
     const [dataList, setDataList] = useState([]);
@@ -35,9 +35,16 @@ export default function AnimeList() {
         fetchAnimeList(filterData);
     }, []);
 
+    const handleChangeTable = (page: number) => {
+        let newFilterObj: any = Object.assign({}, filterData);
+        newFilterObj["page"] = page;
+
+        fetchAnimeList(newFilterObj);
+    };
+
     const onToggleModal = (id?: number) => {
         setIsOpenModal(!isOpenModal)
-    }
+    };
 
     return (
         <div className="anime container-xxl">
@@ -59,6 +66,7 @@ export default function AnimeList() {
                             showSizeChanger={true}
                             total={totalData}
                             showTotal={(total, range) => `${range[0]}-${range[1]} of ${total} items`}
+                            onChange={(pageEvent) => handleChangeTable(pageEvent)}
                         />
                     </div>
                 ) : <>&nbsp;</>
