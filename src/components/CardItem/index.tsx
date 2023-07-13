@@ -10,10 +10,10 @@ const CardItem = (props: CardItemProps) => {
     return (
         <div className="card">
             <div className="row">
-                <div className="col-lg-4 text-center">
+                <div className="col-sm-4 text-center">
                     <img className="card__image" src={data.images.jpg.image_url} alt={data.title} />
                 </div>
-                <div className="col-lg-8">
+                <div className="col-sm-8">
                     <div className="card__title text-ellipsis-two-row" onClick={() => onOpenDetail(data.mal_id)}>
                         {
                             data.score && (

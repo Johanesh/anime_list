@@ -42,3 +42,11 @@
         }
     }
 }
+@media (max-width: 576px) {
+    .card {
+        height: auto;
+        &__image {
+            margin-bottom: 16px;
+        }
+    }
+}

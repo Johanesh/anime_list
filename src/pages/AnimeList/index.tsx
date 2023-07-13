@@ -76,16 +76,25 @@ const AnimeList = () => {
     return (
         <div className="anime container-xxl">
             <div className="anime__search">
-                <span>Search:</span>
                 <InputField value={search} placeholder="Search anime here..." onChange={onChangeInput} onKeyUp={onKeyUp}/>
             </div>
             <div className="row gy-4">
                 {
-                    dataList.length > 0 && dataList.map((item, index) => (
-                        <div className="col-lg-4" key={index}>
-                            <CardItem data={item} onOpenDetail={onToggleModal} />
+                    dataList.length > 0 ? (
+                        <>
+                            {
+                                dataList.map((item, index) => (
+                                    <div className="col-md-6 col-lg-6 col-xl-4" key={index}>
+                                        <CardItem data={item} onOpenDetail={onToggleModal} />
+                                    </div>
+                                ))
+                            }
+                        </>
+                    ) : (
+                        <div className="text-center">
+                            Data Not Found!
                         </div>
-                    ))
+                    )
                 }
             </div>
             {
@@ -96,7 +105,6 @@ const AnimeList = () => {
                             pageSize={Number(filterData.limit)}
                             showSizeChanger={true}
                             total={totalData}
-                            showTotal={(total, range) => `${range[0]}-${range[1]} of ${total} items`}
                             onChange={(pageEvent) => handleChangeTable(pageEvent)}
                         />
                     </div>

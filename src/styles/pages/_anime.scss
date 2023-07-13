@@ -11,3 +11,15 @@
         }
     }
 }
+@media (max-width: 576px) {
+    .anime {
+        &__search {
+            span {
+                display: none;
+            }
+            input {
+                width: 100%;
+            }
+        }
+    }
+}

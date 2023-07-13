@@ -35,7 +35,7 @@ const AnimeDetail = (props: AnimeDetailProps) => {
     }
 
     useEffect(() => {
-        fetchAnimeEpisodes(modalId);
+        if (modalId) fetchAnimeEpisodes(modalId);
     }, [modalId]);
 
     return (
