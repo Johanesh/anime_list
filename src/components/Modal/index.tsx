@@ -1,5 +1,6 @@
 const Modal = (props: ModalProps) => {
     const {
+        children,
         isOpen,
     } = props;
 
@@ -9,7 +10,8 @@ const Modal = (props: ModalProps) => {
             <div className="modal-dialog modal-lg">
                 <div className="modal-content">
                     <div className="modal-body modal__content">
-                        Modal 
+                        <div className="modal__close"/>
+                        {children}
                     </div>
                 </div>
             </div>

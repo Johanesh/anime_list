@@ -1,0 +1,101 @@
+.anime-detail {
+    h4, h5 {
+        font-weight: 700;
+    }
+    &__headline {
+        position: relative;
+        width: 100%;
+        padding-top: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        img {
+            position: absolute;
+            left: 50%;
+            bottom: -15%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+    }
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        opacity: 0.9;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+            opacity: 1;
+        }
+    }
+    &__content {
+        padding: 10% 16px 24px;
+    }
+    &__title {
+        h4 {
+            vertical-align: middle;
+        }
+        p {
+            margin-top: 24px;
+        }
+    }
+    &__info {
+        margin-bottom: 8px;
+        div {
+            font-weight: 700;
+        }
+        span {
+            font-size: 14px;
+            color: #eee;
+        }
+    }
+    &__statistic {
+        div {
+            display: inline-block;
+            margin-right: 8px;
+            svg {
+                margin-right: 4px;
+                path {
+                    color: gold;
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+                svg {
+                    path {
+                        color: lightcoral;
+                    }
+                }
+            }
+        }
+    }
+    &__trailer {
+        position: relative;
+        display: inline-block;
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: auto;
+            path {
+                color: maroon;
+            }
+        }
+    }
+    &__episode {
+        margin-top: 32px;
+        & > h5 {
+            margin-bottom: 24px;
+        }
+    }
+}

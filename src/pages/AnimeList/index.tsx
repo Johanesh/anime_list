@@ -3,6 +3,7 @@ import CardItem from "@/components/CardItem";
 import Modal from "@/components/Modal";
 import Pagination from "rc-pagination";
 import { useState } from "react";
+import AnimeDetail from "../AnimeDetail";
 
 export default function AnimeList() {
     const [filterData, setFilterData] = useState({
@@ -55,7 +56,9 @@ export default function AnimeList() {
                     </div>
                 ) : <>&nbsp;</>
             }
-            <Modal isOpen />
+            <Modal isOpen>
+                <AnimeDetail/>
+            </Modal>
         </div>
     )
 }
