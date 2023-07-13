@@ -1,4 +1,4 @@
-import InputField from "../input";
+import InputField from "../Input";
 
 const Header = () => {
     return (

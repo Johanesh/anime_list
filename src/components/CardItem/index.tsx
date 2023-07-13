@@ -1,8 +1,6 @@
-import { faStar, faChartSimple } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
-const Card = () => {
+const CardItem = () => {
     return (
         <div className="card">
             <div className="row">
@@ -41,4 +39,4 @@ const Card = () => {
     )
 }
 
-export default Card;
+export default CardItem;

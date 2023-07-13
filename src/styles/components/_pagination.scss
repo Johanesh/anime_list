@@ -1,0 +1,14 @@
+.pagination {
+    display: inherit;
+    margin-top: 16px;
+    text-align: right;
+    a:not([href]):not([class]), a:not([href]):not([class]):hover {
+        color: #000;
+    }
+    .rc-pagination-prev .rc-pagination-item-link, .rc-pagination-next .rc-pagination-item-link {
+        font-size: 28px;
+    }
+    .rc-pagination-next button:after, .rc-pagination-prev button:after {
+        margin-top: -3px;
+    }
+}
