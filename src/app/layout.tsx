@@ -1,14 +1,7 @@
-'use client'
-
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 import "@/styles/index.scss";
-import Header from '@/components/Header';
-import { useState } from 'react';
-import { AlertContext } from '@/context/Alert';
-import { LoadingContext } from '@/context/Loading';
-import { Loading } from '@/components/Loading';
-import { Alert } from '@/components/Alert';
+import Layout from '@/components/Layout';
 
 const roboto = Roboto({ weight: ['400', '700'], subsets: ['latin'],})
 
@@ -22,25 +15,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const [alert, setAlert] = useState({
-    isOpen: false,
-    message: "",
-  });
-  const [isLoading, setIsLoading] = useState(false);
-
   return (
     <html>
       <body className={roboto.className}>
-        <AlertContext.Provider value={{alert, setAlert}}>
-          <LoadingContext.Provider value={{isLoading, setIsLoading}}>
-            <Alert />
-            <Loading />
-            <Header />
-            <main>
-              {children}
-            </main>
-          </LoadingContext.Provider>
-        </AlertContext.Provider>
+        <Layout>
+          {children}
+        </Layout>
       </body>
     </html>
   )

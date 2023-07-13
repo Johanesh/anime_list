@@ -76,7 +76,7 @@ const AnimeList = () => {
     return (
         <div className="anime container-xxl">
             <div className="anime__search">
-                <span>Search</span>
+                <span>Search:</span>
                 <InputField value={search} placeholder="Search anime here..." onChange={onChangeInput} onKeyUp={onKeyUp}/>
             </div>
             <div className="row gy-4">
