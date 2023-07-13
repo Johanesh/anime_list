@@ -3,12 +3,18 @@
 import CardItem from "@/components/CardItem";
 import Modal from "@/components/Modal";
 import Pagination from "rc-pagination";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import AnimeDetail from "../AnimeDetail";
 import { getAnimeList } from "@/api/anime";
+import InputField from "@/components/Input";
+import { LoadingContext } from "@/context/Loading";
+import { AlertContext } from "@/context/Alert";
 
 export default function AnimeList() {
+    const {setIsLoading} = useContext(LoadingContext);
+    const {setAlert} = useContext(AlertContext);
     const [isOpenModal, setIsOpenModal] = useState(false);
+    const [search, setSearch] = useState("");
     const [filterData, setFilterData] = useState({
         q: "",
         page: 1,
@@ -18,6 +24,7 @@ export default function AnimeList() {
     const [dataList, setDataList] = useState([]);
 
     const fetchAnimeList = async (filter: AnimeListFilterProps) => {
+        setIsLoading(true);
         try {
             const response = await getAnimeList(filter);
             if (response.status === 200) {
@@ -25,9 +32,14 @@ export default function AnimeList() {
                 setDataList(resData.data);
                 setTotalData(resData.pagination.items.total);
                 setFilterData(filter);
+                setIsLoading(false);
             }
-        } catch (error) {
-            console.error(error);
+        } catch (error: any) {
+            setAlert({
+                isOpen: true,
+                message: error.response.data.message
+            });
+            setIsLoading(false);
         }
     }
 
@@ -42,12 +54,29 @@ export default function AnimeList() {
         fetchAnimeList(newFilterObj);
     };
 
+    const onChangeInput = (value: string) => {
+        setSearch(value);
+    };
+
+    const onKeyUp = (keyCode: number) => {
+        if (keyCode === 13) {
+            let newFilterObj: any = Object.assign({}, filterData);
+            newFilterObj["q"] = search;
+
+            fetchAnimeList(newFilterObj);
+        }
+    }
+
     const onToggleModal = (id?: number) => {
         setIsOpenModal(!isOpenModal)
     };
 
     return (
         <div className="anime container-xxl">
+            <div className="anime__search">
+                <span>Search</span>
+                <InputField value={search} placeholder="Search anime here..." onChange={onChangeInput} onKeyUp={onKeyUp}/>
+            </div>
             <div className="row gy-4">
                 {
                     dataList.length > 0 && dataList.map((item, index) => (
@@ -71,7 +100,7 @@ export default function AnimeList() {
                     </div>
                 ) : <>&nbsp;</>
             }
-            <Modal isOpen={isOpenModal} onCloseModal={onToggleModal}>
+            <Modal isOpen={isOpenModal} onCloseModal={onToggleModal} hasContainer>
                 <AnimeDetail/>
             </Modal>
         </div>

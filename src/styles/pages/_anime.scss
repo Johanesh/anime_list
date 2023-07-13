@@ -1,3 +1,13 @@
 .anime {
     padding: 0 16px;
+    &__search {
+        margin-bottom: 24px;
+        text-align: center;
+        span {
+            margin-right: 8px;
+        }
+        input {
+            width: 350px;
+        }
+    }
 }
