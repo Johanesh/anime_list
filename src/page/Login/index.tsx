@@ -33,7 +33,7 @@ const Login = () => {
 
     const handleLogin = () => {
         const result = accountData.some((item: LoginData) => {
-            if (item.email === data.email && item.password === data.password) {
+            if (item.email === data.email.toLowerCase() && item.password === data.password) {
                 return true;
             }
         })
@@ -94,16 +94,16 @@ const Login = () => {
             <form onSubmit={(e) => submitHandler(e)}>
                 <div className="login__field">
                     <label>Email</label>
-                    <InputField name="email" value={data.email} onChange={onChangeHandler}/>
+                    <InputField testId="input-email" name="email" value={data.email} onChange={onChangeHandler}/>
                     <div className="login__error">{error.email}</div>
                 </div>
                 <div className="login__field">
                     <label>Password</label>
-                    <InputField type="password" name="password" value={data.password} onChange={onChangeHandler}/>
+                    <InputField testId="input-password" type="password" name="password" value={data.password} onChange={onChangeHandler}/>
                     <div className="login__error">{error.password}</div>
                 </div>
                 <div className="login__button">
-                    <button type="submit">Login</button>
+                    <button data-testid="button-login" type="submit">Login</button>
                 </div>
             </form>
         </div>

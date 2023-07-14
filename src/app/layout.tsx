@@ -1,9 +1,6 @@
 import type { Metadata } from 'next'
-import { Roboto } from 'next/font/google'
-import "@/styles/index.scss";
 import Layout from '@/components/Layout';
-
-const roboto = Roboto({ weight: ['400', '700'], subsets: ['latin'],})
+import "@/styles/index.scss";
 
 export const metadata: Metadata = {
   title: 'Animext',
@@ -17,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body className={roboto.className}>
+      <body>
         <Layout>
           {children}
         </Layout>

@@ -1,4 +1,5 @@
 interface InputFieldProps {
+    testId?: string;
     type?: string;
     name?: string;
     value?: string;
