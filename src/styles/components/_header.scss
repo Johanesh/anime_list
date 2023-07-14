@@ -6,3 +6,12 @@ header {
     padding: 8px 0;
     z-index: 4;
 }
+.header {
+    &__logout {
+        cursor: pointer;
+        svg {
+            width: 20px;
+            height: auto;
+        }
+    }
+}

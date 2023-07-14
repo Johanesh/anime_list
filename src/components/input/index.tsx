@@ -1,5 +1,7 @@
 const InputField = (props: InputFieldProps) => {
     const {
+        type,
+        name,
         value,
         placeholder,
         onChange,
@@ -8,7 +10,7 @@ const InputField = (props: InputFieldProps) => {
 
     return (
         <div className="input">
-            <input type="text" value={value} placeholder={placeholder} onChange={(e) => onChange ? onChange(e.target.value) : () => {}} onKeyUp={(e) => onKeyUp ? onKeyUp(e.keyCode) : () => {}} />
+            <input type={type ? type : "text"} name={name} value={value} placeholder={placeholder} onChange={(e) => onChange ? onChange(e.target.value, e.target.name) : () => {}} onKeyUp={(e) => onKeyUp ? onKeyUp(e.keyCode) : () => {}} />
         </div>
     )
 }

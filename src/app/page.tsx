@@ -1,9 +1,9 @@
-import AnimeList from "@/pages/AnimeList";
+import Login from "@/pages/Login";
 
-export default function Home() {
+export default function LoginPage() {
   return (
     <>
-      <AnimeList />
+      <Login />
     </>
   )
 }

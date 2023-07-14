@@ -4,13 +4,17 @@ import CardItem from "@/components/CardItem";
 import Modal from "@/components/Modal";
 import Pagination from "rc-pagination";
 import { useContext, useEffect, useState } from "react";
+import { getCookie } from "cookies-next";
 import AnimeDetail from "../AnimeDetail";
 import { getAnimeList } from "@/api/anime";
 import InputField from "@/components/Input";
 import { LoadingContext } from "@/context/Loading";
 import { AlertContext } from "@/context/Alert";
+import { useRouter } from "next/navigation";
 
 const AnimeList = () => {
+    const router = useRouter();
+    const islogin = getCookie("isLoggedIn");
     const {setIsLoading} = useContext(LoadingContext);
     const {setAlert} = useContext(AlertContext);
     const [modalId, setModalId] = useState(0);
@@ -45,8 +49,13 @@ const AnimeList = () => {
     }
 
     useEffect(() => {
-        fetchAnimeList(filterData);
-    }, []);
+        if (islogin) {
+            fetchAnimeList(filterData);
+        } else {
+            setIsLoading(true);
+            router.push('/');
+        }
+    }, [islogin]);
 
     const handleChangeTable = (page: number) => {
         let newFilterObj: any = Object.assign({}, filterData);
