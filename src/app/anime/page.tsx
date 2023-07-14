@@ -1,4 +1,4 @@
-import AnimeList from "@/pages/AnimeList";
+import AnimeList from "@/page/AnimeList";
 
 export default function AnimePage() {
   return (
