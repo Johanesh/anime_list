@@ -1,22 +1,26 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Requirements
+
+Before start, install this programs (minimum requirements)
+- NodeJS : `v18.16.0`
+- NPM : `v9.5.1`
+
 ## Getting Started
 
-First, run the development server:
+Before proceed with any of the instruction below, please install all the packages first using:
+
+```bash
+npm run install
+```
+
+after that progress done, then run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 
