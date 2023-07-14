@@ -6,13 +6,13 @@ I created this view / interaction is inspired by netflix.com merge with mangapar
 
 I am also created the login portal so not all users had an access to see the anime list, and you could use the account data that i created so that you could access the website, i'll share the accounts information below:
 
-- First Account
-email: test@email.com
-password: test123
+- First Account <br>
+email: test@email.com <br>
+password: test123 <br>
 
-- Second Account
-email: test2@email.com
-password: test456
+- Second Account <br>
+email: test2@email.com <br>
+password: test456 <br>
 
 ### Side note: 
 
